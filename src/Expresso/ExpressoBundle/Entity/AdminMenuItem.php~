@@ -1,0 +1,32 @@
+<?php
+
+namespace Expresso\ExpressoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="expresso_admin_menu_item")
+ */
+class AdminMenuItem
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $name;
+
+    /**
+     * @var AdminMenuGroup $adminMenuItem
+     * @ORM\ManyToOne(targetEntity="AdminMenuGroup")
+     * @ORM\JoinColumn(name="admin_menu_item_id", referencedColumnName="id", nullable=FALSE)
+     */
+    protected $adminMenuGroup;
+
+}

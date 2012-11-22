@@ -1,0 +1,12 @@
+<% for(var i = 0; i <  data.length; i++){ %>
+<h3><%= data[i].title %></h3>
+<div>
+    <% for(var ii = 0; ii <  data[i].itens.length; ii++){
+    var data2 = data[i].itens[ii];
+    %>
+        <li>
+            <a href="#" title="<%= data2.title %>" onclick="javascript:API.loadModule('<%= data[i].name+'/'+data2.name %>');" ><%= data2.title %></a>
+        </li>
+    <%}%>
+</div>
+<%}%>

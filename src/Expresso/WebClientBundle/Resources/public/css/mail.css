@@ -1,0 +1,230 @@
+#tabs {
+	background-color: transparent;
+}
+
+#tabs ul.ui-tabs-nav li .tab-close{
+  margin: 5px 5px 0 -5px;
+}
+
+#tabs ul.ui-tabs-nav li a{
+  cursor: pointer;
+  border:none;
+}
+
+#tabs.ui-widget-content {
+	border:none;
+}
+#tabs .ui-tabs-nav.ui-widget-header {
+	background: none;
+	background-image: none;
+	border: none;
+	border-bottom: 1px solid #4297D7;
+	margin-bottom: 5px;
+}
+
+
+#tabs.ui-tabs .ui-tabs-nav.ui-widget-header li{ padding: 0; margin-bottom: -1px;}
+
+#tabs.ui-tabs .ui-tabs-nav li .ui-icon-close {
+    float: right;
+    margin: 5px 5px 0 -5px;
+}
+
+.wijmo-wijdropdown .wijmo-dropdown .wijmo-dropdown-item.ui-state-active, .wijmo-wijlist-ul .wijmo-wijlist-item.ui-state-active, .wijmo-wijmenu-horizontal .wijmo-wijmenu-link.ui-state-active, .ui-tabs .ui-tabs-nav li.ui-tabs-selected{
+	border : 1px solid #EC8C0B;
+	background-color: white;
+}
+
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a{ 
+ 	font-size: 11px;         
+} 
+ 
+.ui-tabs .ui-tabs-nav li a:hover, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a:hover{ 
+	text-decoration: none !important; 
+} 
+
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li{
+	padding: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.folder-tab-new-msgs-number{
+	font-weight: bold;
+	color: red;
+}
+
+.folder-tab-name{
+	font-weight: bold;
+}
+
+.ui-tabs .ui-tabs-panel{
+	padding: 0.5em 0.5em;
+}
+
+.ui-jqgrid .ui-jqgrid-bdiv {
+    position: relative;
+    margin: 0em;
+    padding:0;
+    /*overflow: auto;*/
+    overflow-x:hidden;
+    overflow-y:auto;
+    text-align:left;
+}
+
+.ui-tabs .ui-tabs-nav li .ui-icon-circle-close  {
+	float: right;
+	margin: 5px 5px 0 -5px;
+}
+
+.message-detail-hover { border-bottom : 1px solid #1B75BB !important;}
+
+#tabs.ui-tabs.wijmo-wijtabs.ui-tabs-top div.scrollWrap{
+	border:none;
+}
+
+table.message-details{
+	font-size: 13px;
+	margin-bottom: 0px;
+	line-height: 0;
+}
+
+table.message-details td{
+	border: none;
+	padding: 0;
+}
+
+.email-box-value{
+	display: none;
+}
+
+#tabs{
+	font-size: 13px;
+	height: 98%;
+}
+
+#tabs.ui-tabs.wijmo-wijtabs.ui-tabs-top div.ui-tabs-panel{
+	padding:0;
+}
+/*
+.ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	border: 1px solid #A3B9D1;
+	background: #01319F url(../images/cabecalho_widgets.jpg) 50% 50% repeat-x;
+	font-weight: normal;
+	color: white;	
+}*/
+
+ul.mainfoldertree .folder.selected-folder{
+	font-weight: bold;
+}
+
+ul.mainfoldertree .folder{
+	color:black;
+}
+
+.ui-jqgrid .ui-pg-input{
+	height: 10px;
+}
+
+.flags{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.flags.seen{
+	background-image: url(../images/seen.gif);
+	background-repeat: no-repeat;
+}
+
+.flags.unseen{
+	background-image: url(../images/unseen.gif);
+	background-repeat: no-repeat;
+}
+
+.flags.recent{
+	background-image: url(../images/new.png);
+	background-repeat: no-repeat;
+}
+
+.flags.important{
+	background-image: url(../images/important.png);
+	background-repeat: no-repeat;
+}
+
+.flags.reply{
+	background-image: url(../images/answered.png);
+	background-repeat: no-repeat;
+}
+
+.flags.forward{
+	background-image: url(../images/forwarded.png);
+	background-repeat: no-repeat;
+}
+
+.flags.draft{
+	background-image: url(../images/draft.png);
+	background-repeat: no-repeat;
+}
+
+.flags.attachment{
+	background-image: url(../images/clip.gif);
+	background-repeat: no-repeat;
+}
+
+.message-content{
+	padding-top: 5px;
+	/*overflow: auto;*/
+}
+
+span.folder.Trash {background-image: url(../images/bin.png);}
+span.folder.Drafts {background-image: url(../images/folder_page_white.png);}
+span.folder.Spam {background-image: url(../images/folder_delete.png);}
+span.folder.Sent {background-image: url(../images/folder_go.png);}
+
+.mainfoldertree{
+	font-size: 11px;
+}
+
+.ui-mail-layout{
+	width: 100%;
+	height: 100%;
+}
+
+.email-box {
+	border: #BDD3F4 solid 1px;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #BDD3F4;
+	cursor: pointer;
+}
+
+.message-header{
+	border: 1px solid #BBD8FB;
+	background-color : #F3F7FD; 
+	font-weight: bold; 
+	font-size: 18px; 
+	border-left: 5px solid #BBD8FB;
+	border-radius:5px; 
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.message-details td.row-title{
+	width: 10%;
+}
+
+.attach-box {
+	display: inline-block;
+	border: 1px solid #BDD3F4;
+	border-radius: 5px;
+	background-color: #BDD3F4;
+	margin: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: pointer;
+}

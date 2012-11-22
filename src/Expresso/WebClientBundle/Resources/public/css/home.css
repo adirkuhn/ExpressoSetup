@@ -1,0 +1,52 @@
+/*
+ * Construtor do Menu
+ */
+body{font-family: sans-serif;}
+
+body div.ui-layout-north.expresso-head-container{
+	background-image : url(../images/Workstation/North.png) !important;
+	overflow: hidden !important;
+}
+
+img.logo{width: 110px;}
+
+body div.menu-disposition{height: 100%; width: 100%;}
+
+body div.footer-container{background-image : url(../images/Workstation/North.png) !important;}
+
+ul.company-by{margin: 0;}
+
+li.company-by{
+    list-style-type: none;
+    display: inline-block;
+    color: white;
+    font-size: 11px;
+}
+
+.north-menu-images .north-menu-image-right{
+	padding-left: 20px;
+}
+
+.ui-layout-north ul.north-menu-images li.north-menu-image{
+	list-style-type: none;
+	display: inline-block;
+}
+
+.ui-layout-north ul.north-menu-images{
+	margin: 0;
+}
+
+div.icons-container{display: block; height: auto; text-align: center;}
+
+span.north-menu-user.north-menu-user-right{color: #EC8C0B !important;}
+
+.ui-layout-north span.north-menu-user.north-menu-user-right{
+	float: right;
+}
+
+.ui-layout-north span.north-menu-user.north-menu-user-right a{
+	color : #EC8C0B;
+	font-weight: bold;
+}
+
+/* Fim Menu*/

@@ -1,0 +1,45 @@
+#ExpressoBundle_homepage:
+#    pattern:  /setup
+#    defaults: { _controller: ExpressoBundle:Setup:setup, index: 0 }
+
+#ExpressoBundle_setup:
+#    pattern:  /setup/{index}
+#    defaults: { _controller: ExpressoBundle:Setup:setup, index: 0 }
+
+#ExpressoBundle_final:
+#    pattern:  /setup/final/
+#    defaults: { _controller: ExpressoBundle:Setup:final }
+
+REST_TopMenu:
+    pattern:  /rest/Expresso/MenuTop
+    defaults: { _controller: ExpressoBundle:Default:MenuTop }
+
+REST_AdminMenu:
+    pattern:  /rest/Expresso/MenuAdmin
+    defaults: { _controller: ExpressoBundle:Default:MenuAdmin }
+    requirements:
+                _method:  GET
+
+REST_CreateFindUser:
+    pattern:  /rest/Expresso/FindUser
+    defaults: { _controller: ExpressoBundle:User:CreateFindUser }
+    requirements:
+      _method:  POST
+
+REST_GetFindUser:
+    pattern:  /rest/Expresso/FindUser/{find}
+    defaults: { _controller: ExpressoBundle:User:GetFindUser }
+    requirements:
+      _method:  GET
+
+REST_jqGridListUsers:
+    pattern:  /rest/Expresso/jqGridListUsers
+    defaults: { _controller: ExpressoBundle:User:jqGridListUsers }
+    requirements:
+      _method:  GET
+
+REST_jqGridListUsersFilter:
+    pattern:  /rest/Expresso/jqGridListUsers/Filter/{filter}
+    defaults: { _controller: ExpressoBundle:User:jqGridListUsers }
+    requirements:
+      _method:  GET

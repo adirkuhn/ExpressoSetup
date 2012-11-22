@@ -1,9 +1,9 @@
 parameters:
-    database_driver:   pdo_mysql
+    database_driver:   pdo_pgsql
     database_host:     localhost
-    database_port:     ~
-    database_name:     symfony
-    database_user:     root
+    database_port:     5433
+    database_name:     expresso
+    database_user:     postgres
     database_password: ~
 
     mailer_transport:  smtp
@@ -13,3 +13,6 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    memcached.servers:
+      - { host: 127.0.0.1, port: 11211 }

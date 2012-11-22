@@ -1,0 +1,211 @@
+<div class="message">
+	<div class="message-options ui-widget-header ui-corner-all" style="width:100%;clear:both;display:inline-block;padding:2px;">
+		<div class="info" style="float: left;padding: 5px;">
+		<% if(!data.flags.Draft){ %>	
+			<span><%= jQuery.trim(data.from[0].name) != "" ? data.from[0].name : data.from[0].mail%></span>
+		<% }else{ %>
+			<span>{{"Draft" | trans}}</span>
+		<% }%>
+		, <%= new Date(data.udate*1000).toString("dd/MM/yyyy") %> 
+		</div>
+		<!--<div style="float: right; margin: 3px; width: auto; display: inline;">
+			<span class="messages-controll" style="display: inline; margin-right: 1px;">
+				<button class="button messages-preferences" title="Preferências">&nbsp;</button>
+			</span>
+		</div> 
+		<div style="float: right;margin-right: 3px;">
+			<span class="messages-controll" style="display: inline; margin-right: 1px;">
+				<button class="button message-prev" title="Mensagem Anterior">&nbsp;</button>
+				<button class="button message-next" title="Proxima Mensagem">&nbsp;</button>
+			</span>
+		</div>
+		-->
+		<div style="float: right;margin-right: 3px;">
+			<span class="messages-remove" style="display: inline; margin-right: 1px;">
+				<button class="button message-remove" title="Excluir">&nbsp;</button>
+			</span>
+		</div>
+		<!--
+		<% if(data.flags.Draft){ %>
+		<div style="float: right; margin: 3px; width: auto; display: inline; margin-right: 0px;">
+			<span class="messages-forward" style="display: inline; margin-right: 1px;">
+				<button class="button message-forward" title="Encaminhar Mensagem">&nbsp;</button>
+			</span>
+		</div>
+		<div style="float: right; margin: 3px; width: auto; display: inline;">
+			<span class="message-reply" style="display: inline; margin-right: 1px;">
+				<button class="button message-reply" title="Responder Mensagem">&nbsp;</button>
+				<a href="#" class="button message-reply-options" title="Mais opções para responder">&nbsp;</a>
+				<div class="message-reply-menu-content" style="display:none;"> 
+					<ul>
+						<li><a href="#" class="menu-pass-through">Sem Histórico</a></li>
+						<li><a href="#" class="menu-command configurations">Todos com Histórico</a></li>
+						<li><a href="#" class="menu-command configurations">Todos sem Histórico</a></li>
+					</ul>
+				</div>
+			</span>
+		</div>
+		<% }else{ %>
+		<div style="float: right; margin: 3px; width: auto; display: inline; margin-right: 0px;">
+			<span class="message-edit" style="display: inline; margin-right: 1px;">
+				<button class="button message-edit" title="Editar Rascunho">&nbsp;</button>
+			</span>
+		</div>
+		<% } %>
+
+		<div style="float: right; margin: 3px; width: auto; display: inline; margin-right: 0px;">
+			<span style="display: inline;">
+				<button class="button message-tags" title="Marcadores">&nbsp;</button>
+				<div class="message-tags-menu-content" style="display:none;"> 
+					<ul>
+					</ul>
+				</div>
+
+				<a class="button message-more" href="#" title="Mais Ações">{{"More" | trans}}</a>
+				<div class="message-more-menu-content" style="display:none;"> 
+					<ul>
+						<li><a href="#" class="menu-command configurations">{{"Move" | trans }}</a></li>
+						<li><a href="#" class="menu-command configurations">Exportar</a></li>
+						<li><a href="#" class="menu-pass-through">Bloquear Remetente</a></li>
+						<li><a href="#" class="menu-pass-through">Reportar Erro</a></li>
+					</ul>
+				</div>
+			</span>
+		</div>
+
+		<div class="buttons" style="float: right; margin: 3px; width: auto; display: inline;">
+			<span  class="message-flags" style="display: inline; margin-right: 1px;">
+
+			</span>
+		</div>
+		-->
+	</div>
+
+	<div class="message-header" style="">
+		<span class="message-subject"><%= jQuery.trim(data.subject) != "" ? data.subject : "Sem Assunto"%></span>
+		<table class="message-details">
+			<% if(data.replyTo.length){ %>
+			<tr>
+				<td class="row-title">
+					{{ "Reply to" | trans }}:
+				</td>
+				<td>
+					<% i = 0 %>
+					<% while(i < data.replyTo.length){ %>
+						<% if(jQuery.trim(data.replyTo[i].mail) != ''){ %>
+						<div class="email-box">
+							<%= (jQuery.trim(data.replyTo[i].name) != '' ? data.replyTo[i].name : data.replyTo[i].mail) %>
+							<span class="email-box-value"><%=data.replyTo[i].name%> <%=data.replyTo[i].mail%></span>
+						</div>
+						<%}%>
+					<%
+						i++;
+					}%>
+				</td>
+			</tr>
+			<% } %>
+			<% if(!data.flags.Draft){ %>
+			<tr>
+				<td class="row-title">
+					{{"From" | trans}}:
+				</td>
+				<td>
+					<div class="email-box"><%= jQuery.trim(data.from[0].name) != '' ?  data.from[0].name : data.from[0].mail %><span class="email-box-value"><%=data.from[0].name%> <<%=data.from[0].mail%>></span></div>
+				</td>
+			</tr>
+			<% } %>
+			<% if(data.to.length){ %>
+			<tr>
+				<td class="row-title">
+					{{"To" | trans}}:
+				</td>
+				<td>
+					<% i = 0 %>
+					<% while(i < data.to.length){ %>
+						<% if(jQuery.trim(data.to[i].mail) != ''){ %>
+						<div class="email-box">
+							<%= jQuery.trim(data.to[i].name) != '' ? data.to[i].name : data.to[i].mail %>
+							<span class="email-box-value"><%= data.to[i].name%> <%= data.to[i].mail %></span>
+						</div>
+						<%}%>
+					<% 
+						i++;
+					}%>
+				</td>
+			</tr>
+			<%}%>
+			<% if(data.cc.length){ %>
+			<tr>
+				<td class="row-title">
+					CC:
+				</td>
+				<td>
+					<% i = 0 %>
+					<% while(i < data.cc.length){ %>
+						<% if(jQuery.trim(data.cc[i].mail) != ''){ %>
+						<div class="email-box">
+							<%= jQuery.trim(data.cc[i].name) != '' ? data.cc[i].name : data.cc[i].mail %>
+							<span class="email-box-value"><%=data.cc[i].name%> <%=data.cc[i].mail%></span>
+						</div>
+						<%}%>
+					<%
+						i++;
+					}%>
+				</td>
+			</tr>
+			<%}%>
+			{#<% if(data.cco.length){ %>
+			<tr>
+				<td class="row-title">
+					CC:
+				</td>
+				<td>
+					<% i = 0 %>
+					<% while(i < data.cco.length){ %>
+						<div class="email-box">
+							<%= jQuery.trim(data.cco[i].name) != '' ? data.cco[i].name : data.cco[i].mail %>
+							<span class="email-box-value"><%=data.cco[i].name%> <%=data.cco[i].mail%></span>
+						</div>
+					<%
+						i++;
+					}%>
+				</td>
+			</tr>
+			<%}%>
+			<tr>
+				<td class="row-title">
+					{{"Date" | trans}}:
+				</td>
+				<td>
+					<%= new Date(data.udate*1000).toString("dd/MM/yyyy") %>
+				</td>
+			</tr>#}
+			<% if(data.attachment.length){ %>
+			<tr>
+				<td>
+					{{"Attachments" | trans}}:
+				</td>
+				<td>
+					<% i = 0 %>
+					<% while(i < data.attachment.length){ %>
+						<div class="attach-box">
+							<span class="flags attachment" style="background-position: 7px 3px;"></span>
+							<a class="attch-link" href="<%= API.URL+'/rest/Mail/DownloadAttachment/Folder/'+data.folder+'/UID/'+data.id+'/IndexPart/'+data.attachment[i].pid %>"><%= limit(data.attachment[i].name, 20)%> - <%= bytes2Size(data.attachment[i].fsize) %></a>
+						</div>
+					<%
+						i++;
+					}%>
+				</td>
+			</tr>
+			<% } %> 
+		</table>
+	</div>
+	<div style="border-radius: 5px; width: 100%; height: 12px;border-bottom: 1px solid #CCC; cursor: pointer;" align="center" title="Mostrar/Ocultar Detalhes" class="message-hide-show-details">
+		<span class="ui-icon ui-icon-carat-1-n"></span>
+		<span class="ui-icon ui-icon-carat-1-s" style="display:none;"></span>
+	</div>
+
+	<div class="message-content">
+		<%= data.body %>
+	</div>
+</div>

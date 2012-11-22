@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs
+END
+license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/license.txt
+END
+core.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/core.js
+END
+core-debug.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/core-debug.js
+END
+parser.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/parser.js
+END
+date.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/date.js
+END
+sugarpak.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/sugarpak.js
+END
+time.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/time.js
+END
+date-pt-BR.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/date-pt-BR.js
+END
+parser-debug.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/parser-debug.js
+END
+sugarpak-debug.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/sugarpak-debug.js
+END
+time-debug.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/6982/sandbox/newExpressoMail/prototype/plugins/datejs/time-debug.js
+END

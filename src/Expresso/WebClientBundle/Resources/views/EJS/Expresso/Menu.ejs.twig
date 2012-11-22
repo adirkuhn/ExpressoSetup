@@ -1,0 +1,8 @@
+<% for(var i in data){ %>
+<li class="north-menu-image north-menu-image-right">
+	<a href="#" title="<%= data[i].title %>" onclick="javascript:API.loadModule('<%= data[i].name %>');" ><img src="<%= API.assectURL+"/images/Workstation/"+data[i].name+'.png' %>"/></a>
+</li>
+<%}%>
+<li class="north-menu-image north-menu-image-right">
+    <a href="<%= API.URL %>/logout" title="{{"Logout" | trans }}"><img src="<%= API.assectURL+"/images/Workstation/Logout.png" %>"/></a>
+</li>

@@ -1,8 +1,12 @@
-setup:
-    resource: "@SetupBundle/Resources/config/routing.yml"
-    prefix:   /setup
-
 # Internal routing configuration to handle ESI
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #    prefix:   /_internal
+
+WebClient:
+    resource: "@WebClientBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ExpressoRest:
+    resource: "@ExpressoBundle/Resources/config/routing.yml"
+    prefix:   /

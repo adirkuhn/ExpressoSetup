@@ -1,0 +1,344 @@
+<div>
+    <input type="button" value="Create new user" class="create-user-button"/>
+    <input type="text" value="" style="width: 200px" onkeyup="if(event.keyCode === 13)Module.jqgridFilterUser( this.value );" />
+    <table id="grid-list-users"></table>
+    <div id="pager-grid-list-users"></div>
+</div>
+<div class="create-user-panel" style="display:none;">
+	<div id="accordion"> 
+        <div> 
+            <h5> 
+				<a href="#">General Informations</a></h5> 
+            <div> 
+                <table>
+                	<tr>
+                		<td>
+                			PV:
+                		</td>
+                		<td colspan="3">
+                			<select name="pv"></select>
+                		</td>
+                	</tr>	
+                	<tr>
+                		<td>
+                			SR:
+                		</td>
+                		<td colspan="3">
+                			<select name="sr"></select>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td>
+                			Gitec:
+                		</td>
+                		<td colspan="3">
+                			<select name="gitec"></select>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td>
+                			Login:
+                		</td>
+                		<td colspan="3">
+                			<input type="text" name="uid"></input>
+                		</td>
+                	</tr>
+                    <tr>
+                        <td>
+                            UidNumber:
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="uidNUmber"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Corporate Name:
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="cn"></input>
+                        </td>
+                    </tr>
+                	<tr>
+                		<td>
+                            Trading Name:
+                		</td>
+                		<td colspan="3">
+                			<input type="text" name="sn"></input>
+                		</td>
+                	</tr>
+
+                	<tr>
+                		<td>
+                			Password:
+                		</td>
+                		<td>
+                			<input type="password" name="password"></input>
+                		</td>
+                		<td>
+                			Confirm Password:
+                		</td>
+                		<td>
+                			<input type="password" name="password-confirm"></input>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td>
+                			Telephone:
+                		</td>
+                		<td colspan="3">
+                			<input type="text" name="telephonenumber"></input>
+                		</td>
+                	</tr>
+
+                    <tr>
+                        <td>
+                            UF:
+                        </td>
+                        <td colspan="3">
+                            <select name="st" class="states-select" style="width:350px;" data-placeholder="Choose a state...">
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            City:
+                        </td>
+                        <td colspan="3">
+                            <select name="city" class="city-select" style="width:350px;" data-placeholder="Choose a city..."></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Address:
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="street"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Postal Code:
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="postalcode"></input>
+                        </td>
+                    </tr>
+                	<tr>
+                		<td>
+                			Password Expired:
+                		</td>
+                		<td colspan="3">
+                			<input type="checkbox" name="password-expired" value="true"></input>
+                		</td>
+                	</tr>
+
+                	<tr>
+                		<td>
+                			Active Account:
+                		</td>
+                		<td colspan="3">
+                			<input type="checkbox" name="active-account" value="true"></input>
+                		</td>
+                	</tr>
+                </table>
+            </div> 
+        </div> 
+  {#      <div>
+            <h5> 
+                <a href="#">Corporate Informations</a></h5> 
+            <div> 
+                <table>
+                    <tr>
+                        <td>
+                            Corporate Name:
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="cn"></input>
+                        </td>
+                    </tr>
+
+
+                	<tr>
+                		<td>
+                			Registration:
+                		</td>
+                		<td>
+                			<input type="text" name="registration"></input>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td>
+                			CPF:
+                		</td>
+                		<td>
+                			<input type="text" name="cpf"></input>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td>
+                			RG:
+                		</td>
+                		<td>
+                			<input type="text" name="rg"></input>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td>
+                			UF RG:
+                		</td>
+                		<td>
+                			<input type="text" name="uf-rg"></input>
+                		</td>
+                	</tr>
+
+                	<tr>
+                		<td>
+                			Description:
+                		</td>
+                		<td>
+                			<input type="text" name="description"></input>
+                		</td>
+                	</tr>
+                </table>	
+            </div> 
+        </div>
+   #}
+        <div> 
+            <h5> 
+                <a href="#">Email Configuration</a></h5> 
+            <div> 
+                <table>
+                	<tr>
+                		<td>
+                			Active Mail Account:
+                		</td>
+                		<td>
+                			<input type="checkbox" name="active-email-account"></input>
+                		</td>
+                	</tr>
+
+                	<tr>
+                		<td>
+                			Email:
+                		</td>
+                		<td>
+                			<input type="text" name="mail"></input>
+                		</td>
+                	</tr>
+
+                	<tr>
+                		<td>
+                			Alternate Email:
+                		</td>
+                		<td>
+                			<input type="text" name="alternate-mail"></input>
+                		</td>
+                	</tr>
+
+                	<tr>
+                		<td>
+                			Forwarding Email:
+                		</td>
+                		<td>
+                			<input type="text" name="forwarding-mail"></input>
+                		</td>
+                	</tr>
+   {#
+                	<tr>
+                		<td>
+                			Can Only Forward Emails:
+                		</td>
+                		<td>
+                			<input type="checkbox" name="can-forward-email"></input>
+                		</td>
+                	</tr>
+    #}
+                	<tr>
+                		<td>
+                			Email Quota in MB(Megabyte):
+                		</td>
+                		<td>
+                			<input type="text" name="email-quota"></input>
+                		</td>
+                	</tr>
+                </table>
+            </div> 
+        </div> 
+        <div> 
+            <h5> 
+                <a href="#">Groups</a></h5> 
+            <div style="min-height : 150px;"> 
+                <select data-placeholder="Choose some groups..." style="width:350px;" multiple class="group-select">
+                    <option value="Admins">Admins</option>
+                    <option value="Users">Users</option>
+                </select>
+            </div> 
+        </div> 
+        <div> 
+            <h5> 
+                <a href="#">Modules</a></h5> 
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            Home
+                        </td>
+                        <td>
+                            <input type="checkbox" name="module-home"></input>
+                        </td>
+
+                        <td>
+                            Bilboard
+                        </td>
+                        <td>
+                            <input type="checkbox" name="module-bilboard"></input>
+                        </td>
+
+                        <td>
+                            Mail
+                        </td>
+                        <td>
+                            <input type="checkbox" name="module-mail"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Service Call
+                        </td>
+                        <td>
+                            <input type="checkbox" name="call-account"></input>
+                        </td>
+
+                        <td>
+                            Scheduling
+                        </td>
+                        <td>
+                            <input type="checkbox" name="scheduling-account"></input>
+                        </td>
+
+                        <td>
+                            Statistics
+                        </td>
+                        <td>
+                            <input type="checkbox" name="statistics-account"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Support
+                        </td>
+                        <td colspan="5">
+                            <input type="checkbox" name="support-account"></input>
+                        </td>
+                    </tr>
+                </table>
+            </div> 
+        </div> 
+    </div> 
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <button class="form-button cancel-organization orange">Cancel</button>
+        <button class="form-button save-organization orange">Save</button>
+    </div>
+</div>

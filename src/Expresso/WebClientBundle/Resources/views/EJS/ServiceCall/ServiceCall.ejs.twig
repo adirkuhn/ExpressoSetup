@@ -1,0 +1,45 @@
+<div class="ServiceCall content-ServiceCall-body">
+    <div class="module-name center-disposition">
+        <h1><%= "{{ "Management Call" | trans }}".toUpperCase() %></h1>
+    </div>
+    <div class="options center-disposition backgroud-form">
+
+        <h2 class="title-form-inside">{{ "Services" | trans }}</h2>
+        <div class="buttons-options">
+            <button class="button new-call blue">{{ "Open call" | trans }}</button>
+            <button class="button schedule-downtime orange">{{ "Schedule downtime" | trans }}</button>
+        </div>
+
+    </div>
+    <div class="tecninc-filter center-disposition backgroud-form">
+
+        <h2 class="title-form-inside">{{ "List of authorized tecnics" | trans }}</h2>
+        <ul>
+            <li>
+                {{ "Provider" | trans }}: <select id="outfitter" name="outfitter">
+                    <option>Todos</option>
+                    <option>Teste</option>
+                </select>
+                {{ "State" | trans }}: <select>
+                    <option>Todos</option>
+                </select>
+
+            </li>
+            <li>
+                {{ "Name" | trans }}: <input type="text"/>
+                {{ "RG" | trans }}: <input type="text"/>
+
+            </li>
+        </ul>
+
+    </div>
+
+    <h2 class="title-form-outside">{{ "Call in opem" | trans }}</h2>
+
+    <div class="grid-ServiceCall center-disposition">
+        <table id="table-call"></table>
+        <div id="plist-call"></div>
+    </div>
+
+    <div class="hidden new-call" id="new-call-view"></div>
+</div>

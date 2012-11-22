@@ -1,0 +1,239 @@
+div.ServiceCall.content-ServiceCall-body{
+    width: 100%;
+    height: 100%;
+}
+
+div.ServiceCall div.center-disposition{
+    margin: 0 10% 0 10%;
+    text-align: left;
+}
+
+div.ServiceCall h1{
+    font-size: 18px;
+    color: #0039BA;
+    font-family: sans-serif;
+    margin-bottom: 8px;
+}
+
+div.ServiceCall h2.title-form-inside{
+    font-size: 18px;
+    line-height: 24px;
+    color: #0039BA;
+    border-bottom: 1px;
+    border-style: dotted;
+    border-color: black;
+    margin: 0 0 20px 0;
+}
+
+div.ServiceCall h2.title-form-outside{
+    font-size: 18px;
+    line-height: 24px;
+    color: #0039BA;
+    border-bottom: 1px;
+    border-style: dotted;
+    border-color: black;
+    margin: 0 10% 0 10%;
+    margin-bottom: 25px;
+}
+
+div.ServiceCall div.backgroud-form{
+    border-radius: 5px;
+    border-color: #CDCDCD;
+    background-color: #f6f6f6;
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px 30px 20px 30px;
+    margin-bottom: 25px;
+}
+
+div.ServiceCall button.blue span,div.ServiceCall button.orange span{color: #ffffff;}
+
+div.ServiceCall button.blue{
+    background: #DAE6F4 url(../images/Workstation/blue-button.png) 50% 50% repeat-x;
+    border:0;
+    border-radius: 5px;
+}
+
+div.ServiceCall button.orange{
+    background: #DAE6F4 url(../images/Workstation/orange-button.png) 50% 50% repeat-x;
+    border:0;
+    border-radius: 5px;
+}
+
+/* Icons Grid CSS*/
+div.ServiceCall span.icon-select{
+    background: transparent;
+    border-color: transparent;
+}
+
+div.ServiceCall span.icon-select span.ui-button-icon-primary{
+ background-image: url(../images/Workstation/icons-color.png);
+}
+
+div.ServiceCall span.icon-clipboard{
+    background: transparent;
+    border-color: transparent;
+}
+
+div.ServiceCall span.icon-clipboard span.ui-button-icon-primary{
+    background-image: url(../images/Workstation/icons-color.png);
+}
+/* Icons Grid  Fim CSS*/
+
+/* Custom Grid CSS */
+div.ServiceCall th.ui-th-column{
+    background-color: #f6f6f6;
+    background: #f6f6f6;
+    border: 0px none;
+    border-bottom-width: 1px !important;
+    border-bottom-color: black !important;
+    border-bottom-style: dotted !important;
+}
+
+div.ServiceCall th.ui-th-column div{
+    font-weight: bold;
+}
+
+div.ServiceCall div.ui-jqgrid-hdiv{
+    background-color: #f6f6f6;
+    background: #f6f6f6;
+    border: 0;
+}
+
+div.ServiceCall div.ui-jqgrid-pager{
+    background-color: #f6f6f6;
+    background: #f6f6f6;
+    border: 0;
+}
+
+div.ServiceCall div.ui-jqgrid{
+    background-color: #ffffff;
+    border: 0;
+}
+
+div.ServiceCall tr.ui-jqgrid-labels{
+    height: 45px;
+}
+
+div.ServiceCall tr.jqgrow{
+    border: 0;
+    background: white;
+    border-color: white;
+    height: 35px;
+}
+
+div.ServiceCall tr.jqgrow td{
+    border-bottom-color: black;
+    border-bottom-style: dotted;
+    padding: 5px 0 0 0;
+}
+
+div.ServiceCall tr.jqgrow td{
+    border-top: 0px none;
+}
+
+/* Zebra de Linha */
+div.ServiceCall tr.jqgrow:nth-child(2n+1){
+    background: #f6f6f6;
+    border-right-color: #f6f6f6;
+   /* border: #f6f6f6; */
+}
+
+/* Fonte das linhas sem zebra */
+div.ServiceCall tr.jqgrow td:nth-child(even), div.ServiceCall th.ui-th-column:nth-child(even){
+    color: #6E6E6E;
+}
+
+/* Zebra dos titulos coluna*/
+div.ServiceCall tr.jqgrow td:nth-child(odd) {
+    background: #e1e1e1;
+    border-right-color: #e1e1e1;
+    opacity: 0.65;
+    color: black;
+}
+
+/* Zebra das linhas coluna*/
+div.ServiceCall th.ui-th-column:nth-child(odd) {
+    background: #e1e1e1;
+    opacity: 0.65;
+    color: black;
+}
+/* Custom Grid Fim CSS */
+
+/* Custom dialog CSS*/
+div.custom-dialog{
+
+}
+
+div.custom-dialog a.ui-dialog-titlebar-close{
+    opacity: 1;
+}
+
+div.custom-dialog span.ui-icon-closethick{
+    background-image: url(../images/Workstation/dialog-close.png);
+    background-position: 0;
+    width: 18px;
+    height: 18px;
+}
+
+div.custom-dialog div.ui-dialog-titlebar{
+    background: #E2E2E2;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+/* Custom dialog Fim CSS*/
+
+/* New Call View CSS*/
+.ui-tooltip, .qtip{
+    min-width: 50px;
+    max-width: 600px;
+}
+
+div.ServiceCall span.important{
+    color: red;
+    font-weight: bold;
+}
+
+div.ServiceCall .new-call td.field{
+    width: 98px;
+    padding: 10px 1px 9px;
+}
+
+div.ServiceCall .new-call table.data-call-new-service-call, div.ServiceCall .new-call table.data-user-new-service-call{
+    margin-bottom: 0;
+}
+
+div.ServiceCall .new-call span.field{
+    font-weight: bold;
+    min-width: 100px;
+}
+
+
+div.ServiceCall .new-call div.user-data{
+    max-width: 650px;
+}
+
+div.ServiceCall .new-call h3{
+    font-size: 18px;
+    line-height: 20px;
+    color: #0039BA;
+    border-bottom: 1px;
+    border-style: dotted;
+    border-color: black;
+    margin-bottom: 8px;
+}
+
+
+
+div.ServiceCall .new-call div.backgroud-form{
+    border-radius: 5px;
+    border-color: #CDCDCD;
+    background-color: #f6f6f6;
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px 30px 20px 30px;
+    margin: 3% 3% 3% 3%;
+}
+
+/* New Call View Fim CSS*/

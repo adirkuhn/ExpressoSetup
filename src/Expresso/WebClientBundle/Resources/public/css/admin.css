@@ -1,0 +1,11 @@
+.ui-jqgrid .ui-pg-input{
+    height: 18px;
+}
+
+.chzn-container-multi .chzn-choices .search-field input{
+	height: 25px;
+}
+
+.chzn-container .chzn-drop {
+	/*max-height: 100px;*/
+}

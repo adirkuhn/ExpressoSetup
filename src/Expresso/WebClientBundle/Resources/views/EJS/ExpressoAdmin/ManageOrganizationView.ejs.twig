@@ -1,0 +1,67 @@
+<div>
+    <input type="button" value="Create new organization" class="create-organization-button"/>
+    <input type="text" value="" style="width: 200px" onkeyup="if(event.keyCode === 13)Module.jqgridFilterUser( this.value );" />
+    <table id="grid-list-organizations"></table>
+    <div id="pager-grid-list-organizations"></div>
+</div>
+<div class="create-organization-panel" style="display:none;">
+	<div id="accordion"> 
+        <div> 
+            <h5> 
+				<a href="#">General Informations</a></h5> 
+            <div> 
+                <table>
+                	<tr>
+                		<td>
+                			Type:
+                		</td>
+                		<td>
+                			<select name="type" class="type-select" style="width:350px;" data-placeholder="Choose a type...">
+                                <option value="PV">PV</option>
+                                <option value="SR">SR</option>
+                                <option value="Gitec">Gitec</option>
+                            </select>
+                		</td>
+                	</tr>	
+                    <tr>
+                        <td>
+                            GidNumber:
+                        </td>
+                        <td>
+                            <input type="text" name="gidNUmber"></input>
+                        </td>
+                    </tr>
+                	<tr>
+                		<td>
+                			Organization Name:
+                		</td>
+                		<td>
+                			<input type="text" name="name"></input>
+                		</td>
+                	</tr>
+                    <tr>
+                        <td>
+                            Mail:
+                        </td>
+                        <td>
+                            <input type="text" name="mail"></input>
+                        </td>
+                    </tr>
+                </table>
+            </div> 
+        </div>
+        {#<div> 
+            <h5> 
+                <a href="#">Users</a></h5> 
+            <div style="min-height : 150px;"> 
+                <select data-placeholder="Choose some users..." style="width:350px;" multiple class="users-select">
+                    
+                </select>
+            </div> 
+        </div> #}
+    </div> 
+    <div>
+        <button class="form-button cancel-organization orange">Cancel</button>
+        <button class="form-button save-organization orange">Save</button>
+    </div>
+</div>

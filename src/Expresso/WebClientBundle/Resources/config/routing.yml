@@ -1,0 +1,27 @@
+WebClientBundle_homepage:
+    pattern:  /
+    defaults: { _controller: WebClientBundle:Default:index }
+
+WebClientBundle_module:
+    pattern:  /module/{module}
+    defaults: { _controller: WebClientBundle:Default:index }
+
+WebClientBundle_Admin:
+    pattern:  /Admin
+    defaults: { _controller: WebClientBundle:Default:Admin }
+
+WebClientBundle_login:
+    pattern:  /login
+    defaults: { _controller: WebClientBundle:Default:login }
+
+WebClientBundle_Templates:
+    pattern:  /template/EJS/{module}/{template}
+    defaults: { _controller: WebClientBundle:Template:render }
+    requirements:
+        _method:  GET
+
+_login_check:
+    pattern:  /login_check
+
+_logout:
+    pattern:  /logout
