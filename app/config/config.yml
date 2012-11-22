@@ -41,6 +41,7 @@ doctrine:
         driver:   "%database_driver%"
         host:     "%database_host%"
         port:     "%database_port%"
+
         dbname:   "%database_name%"
         user:     "%database_user%"
         password: "%database_password%"
@@ -57,3 +58,23 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+#services:
+#    ExpressoLdap:
+#        class:  Expresso\LdapBundle\Service\LdapService
+#        arguments:
+#            config:
+#                host: ''
+#                base_dn: ''
+#                sizelimit: 10
+#                version: 3
+#                # username: ''
+#                # userpass: ''
+#                adminname: ''
+#                adminpass: ''
+#            filters:
+#                user: ''
+#                group: ''
+#    Expresso.Ldap.UserProvider:
+#        class:  Expresso\LdapBundle\Provider\LdapUserProvider
+#        arguments: [@ExpressoLdap]

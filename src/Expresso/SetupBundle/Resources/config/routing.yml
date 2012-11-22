@@ -1,0 +1,11 @@
+ExpressoSetupBundle_homepage:
+    pattern:  /setup
+    defaults: { _controller: SetupBundle:Default:setup, index: 0 }
+
+ExpressoSetupBundle_setup:
+    pattern:  /setup/{index}
+    defaults: { _controller: SetupBundle:Default:setup, index: 0 }
+
+ExpressoSetupBundle_final:
+    pattern:  /setup/final/
+    defaults: { _controller: SetupBundle:Default:final }
