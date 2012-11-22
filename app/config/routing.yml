@@ -1,6 +1,6 @@
 setup:
     resource: "@SetupBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /setup
 
 # Internal routing configuration to handle ESI
 #_internal:
