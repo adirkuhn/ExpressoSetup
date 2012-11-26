@@ -1,0 +1,9 @@
+#arquivos de cache do symfony
+app/bootstrap.php.cache
+app/cache/*
+
+#tags
+.tags*
+
+#logs
+app/logs/*
