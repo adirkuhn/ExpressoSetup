@@ -7,3 +7,9 @@ app/cache/*
 
 #logs
 app/logs/*
+
+#web bundles
+web/bundles/*
+
+#vendors
+vendor/*
