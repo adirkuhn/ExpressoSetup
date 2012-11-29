@@ -1,6 +1,6 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "name": "expresso/expressosetup",
+    "description": "The expresso setup distribution",
     "autoload": {
         "psr-0": { "": "src/" }
     },
