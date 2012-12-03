@@ -1,5 +1,5 @@
 {
-    "name": "expresso/expressosetup",
+    "name": "expresso.livre/setup",
     "description": "The expresso setup distribution",
     "autoload": {
         "psr-0": { "": "src/" }
