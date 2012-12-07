@@ -1,3 +1,4 @@
+
 # Bootstrap
 app/bootstrap*
 
@@ -15,3 +16,19 @@ app/config/parameters.ini
 app/config/parameters.yml
 
 web/bundles/*
+=======
+#arquivos de cache do symfony
+app/bootstrap.php.cache
+app/cache/*
+
+#tags
+.tags*
+
+#logs
+app/logs/*
+
+#web bundles
+web/bundles/*
+
+#vendors
+vendor/*

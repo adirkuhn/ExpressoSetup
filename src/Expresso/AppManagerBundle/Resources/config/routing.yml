@@ -1,0 +1,3 @@
+app_manager_homepage:
+    pattern:  /appmanager/
+    defaults: { _controller: AppManagerBundle:Default:index }

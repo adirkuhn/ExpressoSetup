@@ -1,0 +1,20 @@
+Expresso\AppManagerBundle\Entity\App:
+    type: entity
+    table: null
+    repositoryClass: Expresso\AppManagerBundle\Entity\AppRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+        namespace:
+            type: string
+            length: 255
+        enable:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

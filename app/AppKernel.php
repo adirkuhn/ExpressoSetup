@@ -1,12 +1,16 @@
 <?php
 
 use Symfony\Component\HttpKernel\Kernel;
+//use Symfony\Component\Finder\Finder;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
     public function registerBundles()
     {
+        //Inicia classe appManager
+        $appManager = new Expresso\AppManagerBundle\AppManagerBundle();
+
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
@@ -22,12 +26,21 @@ class AppKernel extends Kernel
             new Expresso\SetupBundle\SetupBundle(),
             new Expresso\ExpressoBundle\ExpressoBundle(),
             new Expresso\WebClientBundle\WebClientBundle(),
+            $appManager,
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+        }
+
+        //Recupera lista de apps do Expresso e inicia no bundle
+        $apps = $appManager->getApps();
+        if (!empty($apps)) {
+            foreach ($apps as $app) {
+                $bundles[] = new $app();
+            }
         }
 
         return $bundles;
