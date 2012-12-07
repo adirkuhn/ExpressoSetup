@@ -1,0 +1,6 @@
+{
+    "require": {
+	"expresso/expressofoobundle": "dev-master"
+    },
+    "minimum-stability": "dev"
+}
