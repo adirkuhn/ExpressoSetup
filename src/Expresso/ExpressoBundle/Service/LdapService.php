@@ -17,11 +17,7 @@ class LdapService
 
         $this->filters = $filters;
 
-        /**
-         * @todo validar campos
-         */
-
-        $this->connect();
+        //$this->connect();
     }
 
     /**
@@ -128,7 +124,7 @@ class LdapService
         return $this->bind($this->config['username'] , $this->config['userpass'] );
     }
    
-    private function connect()
+    public function connect()
     {
         $port = isset($this->config['port']) ? $this->config['port'] : '389' ;
         $ress = ldap_connect($this->config['host'], $port);
@@ -151,10 +147,15 @@ class LdapService
         } 
         else 
         {
-            $bindress = ldap_bind($ress);
-        
-            if (!$bindress) 
+
+
+            //if (!$bindress)
+            //   throw new \Exception('Unable to connect Ldap');
+            try{
+                $bindress = ldap_bind($ress);
+            }catch (\Exception $e){
                 throw new \Exception('Unable to connect Ldap');
+            }
         }
     
         $this->_ress = $ress;

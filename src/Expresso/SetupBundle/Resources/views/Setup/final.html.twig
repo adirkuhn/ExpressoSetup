@@ -1,28 +1,80 @@
 {% extends "SetupBundle::setup_layout.html.twig" %}
 
+
+{% block stylesheets %}
+<style>
+div.center-disposition {
+    margin: 0 10% 0 10%;
+    text-align: left;
+}
+div.backgroud-form {
+    border-radius: 5px;
+    border-color: #CDCDCD;
+    background-color: #F6F6F6;
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px 30px 20px 30px;
+}
+input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+    display: inline-block;
+    padding: 4px;
+    font-size: 13px;
+    line-height: 18px;
+    color: gray;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    zoom: 1;
+}
+input:focus, textarea:focus {
+    outline: 0;
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+.selected{
+    font-weight: bold;
+}
+
+
+h1 {
+    border: 0;
+    font-size: 35px;
+    line-height: 24px;
+    color: #0039BA;
+    padding-top : 15px;
+    border-bottom: 1px;
+    border-style: dotted;
+    border-color: black;
+    margin: 0 0 20px 0;
+}
+</style>
+{% endblock %}
+
 {# {% block content_class %}config_done{% endblock %} #}
 {% block body %}
-    <h1>Well done!</h1>
-    {% if is_writable %}
-    <h2>Your distribution is configured!</h2>
-    {% else %}
-    <h2 class="configure-error">Your distribution is almost configured but...</h2>
-    {% endif %}
-    <h3>
-        <span>
-            {% if is_writable %}
-                Your parameters.yml file has been overwritten with these parameters (in <em>{{ yml_path }}</em>):
-            {% else %}
-                Your parameters.yml file is not writeable! Here are the parameters you can copy and paste in <em>{{ yml_path }}</em>:
-            {% endif %}
-        </span>
-    </h3>
+    <div class="backgroud-form center-disposition">
+        <h1>Well done!</h1>
+        {% if is_writable %}
+        <h2>Your distribution is configured!</h2>
+        {% else %}
+        <h2 class="configure-error">Your distribution is almost configured but...</h2>
+        {% endif %}
+        <h3>
+            <span>
+                {% if is_writable %}
+                    Your parameters.yml file has been overwritten with these parameters (in <em>{{ yml_path }}</em>):
+                {% else %}
+                    Your parameters.yml file is not writeable! Here are the parameters you can copy and paste in <em>{{ yml_path }}</em>:
+                {% endif %}
+            </span>
+        </h3>
 
-    <textarea class="symfony-configuration">{{ parameters }}</textarea>
+        <textarea class="symfony-configuration" style="width: 99%; height: 300px; resize:none;">{{ parameters }}</textarea>
 
-    {% if welcome_url %}
-        <ul>
-            <li><a href="{{ welcome_url }}">Go to the Welcome page</a></li>
-        </ul>
-    {% endif %}
+        <a href="../../../app_dev.php/login">Go home boy you are drunk</a>
+    </div>
 {% endblock %}

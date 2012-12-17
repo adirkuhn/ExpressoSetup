@@ -23,6 +23,7 @@ class LdapUserProvider implements UserProviderInterface
   
   public function loadUserByUsername( $username )
   {
+    $this->ldapService->connect();
     $this->ldapService->bindAdmin();
     $u = $this->ldapService->getUserByUid($username);
 

@@ -6,7 +6,7 @@ imports:
 framework:
     #esi:             ~
     #translator:      { fallback: %locale% }
-    translator:      { fallback: pt_BR }
+    translator:      { fallback: en }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -65,14 +65,14 @@ services:
         class:  Expresso\ExpressoBundle\Service\LdapService
         arguments:
             config:
-                host: 'expressodev'
-                base_dn: 'dc=prognus'
+                host: %ldap_host%
+                base_dn: %ldap_dn%
                 sizelimit: 0
                 version: 3
                 #username: ''
                 #userpass: ''
-                adminname: 'cn=admin,dc=prognus'
-                adminpass: 'prognus'
+                adminname: %ldap_user%
+                adminpass: %ldap_pass%
                 userContext: 'ou=expresso,dc=prognus'
                 groupContext:  'ou=expresso,dc=prognus'
                 roleContext: 'ou=expresso,dc=prognus'

@@ -1,6 +1,6 @@
 {% extends 'SetupBundle::setup_layout.html.twig' %}
 
-{% block title %} Expresso - Setup - Banco de dados {% endblock %}
+{% block title %} Expresso - Check {% endblock %}
 
 
 {% block stylesheets %}
@@ -53,35 +53,42 @@ h1 {
     border-color: black;
     margin: 0 0 20px 0;
 }
+
+li{
+    list-style: none;
+    width: 100%;
+    background-color: #dadada;
+    padding: 5px;
+    border-radius: 15px;
+}
 </style>
 {% endblock %}
 
 {% block body %}
-    {% form_theme form "SensioDistributionBundle::Configurator/form.html.twig" %}
-
-    <div class="backgroud-form center-disposition">
-    {% include "SensioDistributionBundle::Configurator/steps.html.twig" with { "index": index, "count": count } %}
-        <h1>Configure your Database</h1>
-        <p>If your website needs a database connection, please configure it here.</p>
-
-        {{ form_errors(form) }}
-        <form action="{{ path('ExpressoSetupBundle_setup', { 'index': index }) }}" method="POST">
-            <div class="symfony-form-column">
-                {{ form_row(form.driver) }}
-                {{ form_row(form.host) }}
-                {{ form_row(form.name) }}
-            </div>
-            <div class="symfony-form-column">
-                {{ form_row(form.user) }}
-                {{ form_row(form.password) }}
-            </div>
-
-            {{ form_rest(form) }}
-
-            <div class="symfony-form-footer">
-                <p><input type="submit" value="Next Step" class="symfony-button-grey" /></p>
-                <p>* mandatory fields</p>
-            </div>
-        </form>
+    <div class="center-disposition">
+        <h1>Módulos Disponíveis</h1>
+        <div class="backgroud-form">
+           <ul style="margin: 0;padding: 0;width: 100%;">
+           {% for module in modules %}
+                <li style="width: 100%">
+                    <table style="width: 100%">
+                        <tr style="width: 100%">
+                            <td style="width: 15%">
+                                <img src="http://fast.mediamatic.nl/f/rqqp/image/4766-465-470-size.gif" height="100px" width="100px">
+                            </td>
+                            <td>
+                                <p><strong>Name: </strong>{{ module.name }}</p>
+                                <p><strong>Description: </strong>{{ module.description }}</p>
+                                <p><strong>URL: </strong>{{ module.url }}</p>
+                            </td>
+                            <td style="text-align: right;">
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+           {% endfor %}
+           </ul>
+        </div>
     </div>
 {% endblock %}

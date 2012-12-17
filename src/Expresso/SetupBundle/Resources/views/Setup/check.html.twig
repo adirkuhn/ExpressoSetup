@@ -1,6 +1,6 @@
 {% extends 'SetupBundle::setup_layout.html.twig' %}
 
-{% block title %} Expresso - Setup - Ldap {% endblock %}
+{% block title %} Expresso - Check {% endblock %}
 
 
 {% block stylesheets %}
@@ -57,31 +57,11 @@ h1 {
 {% endblock %}
 
 {% block body %}
-    {% form_theme form "SensioDistributionBundle::Configurator/form.html.twig" %}
-
-    <div class="backgroud-form center-disposition">
-        {% include "SensioDistributionBundle::Configurator/steps.html.twig" with { "index": index, "count": count } %}
-        <h1>Configure LDAP paramenters</h1>
-        <p>Configuration of ldap connection parameters.</p>
-
-        {{ form_errors(form) }}
-        <form action="{{ path('ExpressoSetupBundle_setup', { 'index': index }) }}" method="POST">
-            <div class="symfony-form-column">
-                {{ form_row(form.host) }}
-                {{ form_row(form.port) }}
-                {{ form_row(form.dn) }}
-            </div>
-            <div class="symfony-form-column">
-                {{ form_row(form.user) }}
-                {{ form_row(form.pass) }}
-            </div>
-
-            {{ form_rest(form) }}
-
-            <div class="symfony-form-footer">
-                <p><input type="button" value="Back" class="symfony-button-grey" onclick="javascript:window.history.back();"><input type="submit" value="Next Step" class="symfony-button-grey" /></p>
-                <p>* mandatory fields</p>
-            </div>
-        </form>
+    <div class="center-disposition backgroud-form">
+        <h1>Problemas com o arquivo parameters.yml</h1>
+        <p>Antes de iniciar a configuração dos dados de banco de dados e ldap</p>
+        <p>O arquivo <strong>parameters.yml</strong> não tem permissões para a escrita</p>
+        <p>Conceda a permissão e <a href="../0">tente novamente</a> configurar.</p>
+        
     </div>
 {% endblock %}

@@ -3,8 +3,8 @@
 namespace Expresso\SetupBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use SymfonyRequirements;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Config\Definition\Exception\Exception;
 
 class DefaultController extends Controller
 {
@@ -24,35 +24,58 @@ class DefaultController extends Controller
 
         //Como este seviço de configuração é do symfony, ele adiciona suas configurações
         //de bando de dados e secret, então é necessário remover eles do valor do count
-        $stepCount = $configurator->getStepCount() - 2;
+        if($configurator->isFileWritable()){
+            $stepCount = $configurator->getStepCount() - 2;
 
-        $step = $configurator->getStep($index);
-        $form = $this->container->get('form.factory')->create($step->getFormType(), $step);
+            $step = $configurator->getStep($index);
 
-        $request = $this->container->get('request');
-        if ('POST' === $request->getMethod()) { 
-            $form->bindRequest($request);
-            if ($form->isValid()) {
-                $configurator->mergeParameters($step->update($form->getData()));
-                $configurator->write();
+            $form = $this->container->get('form.factory')->create($step->getFormType(), $step);
 
-                $index++;
+            $request = $this->container->get('request');
+            
+            if ('POST' === $request->getMethod()){
+                $form->bindRequest($request);
+                if ($form->isValid()) {
+                    $oi = $step->update($form->getData());
+                    $configurator->mergeParameters($oi);
+                    $configurator->clean();
+                    $configurator->write();
+                    if(array_key_exists ('dn', $step)){
+                        try{
+                            $ads = $this->get("ExpressoLdap");
+                            $ads->connect();
+                        }catch (\Exception $e){
+                            return new RedirectResponse($this->container->get('router')->generate('ExpressoSetupBundle_setup', array('index' => $index, 'error' => $e->getMessage())));
+                        }
+                    }
 
-                if ($index < $stepCount) {
-                    return new RedirectResponse($this->container->get('router')->generate('ExpressoSetupBundle_setup', array('index' => $index)));
+                    $index++;
+
+                    if ($index < $stepCount) {
+                        return new RedirectResponse($this->container->get('router')->generate('ExpressoSetupBundle_setup', array('index' => $index)));
+                    }
+
+                    return new RedirectResponse($this->container->get('router')->generate('ExpressoSetupBundle_final'));
                 }
-
-                return new RedirectResponse($this->container->get('router')->generate('ExpressoSetupBundle_final'));
             }
+
+            //$index++;
+
+            return $this->container->get('templating')->renderResponse($step->getTemplate(), array(
+                'form'    => $form->createView(),
+                'index'   => $index,
+                'count'   => $stepCount,
+                'version' => $this->getVersion(),
+            ));
+        }else{
+            /*ob_start();
+            print_r( "=== LOG BEGIN ===" . "\n" );
+            print_r(     $this->container->get('router')->generate('ExpressoSetupBundle_final')         );
+            print_r( "=== LOG END ===" . "\n" );
+            $output = ob_get_clean();
+            file_put_contents( '/tmp/log-gustavo2.txt',  $output );*/
+            return new RedirectResponse($this->container->get('router')->generate('ExpressoSetupBundle_check'));
         }
-
-
-        return $this->container->get('templating')->renderResponse($step->getTemplate(), array(
-            'form'    => $form->createView(),
-            'index'   => $index,
-            'count'   => $stepCount,
-            'version' => $this->getVersion(),
-        ));
     }
 
     public function finalAction()
@@ -62,7 +85,10 @@ class DefaultController extends Controller
         }
 
         $configurator = $this->container->get('sensio.distribution.webconfigurator');
+        $oi['setup'] = 1;
+        $configurator->mergeParameters($oi);
         $configurator->clean();
+        $configurator->write();
 
         try {
             $welcomeUrl = $this->container->get('router')->generate('_welcome');
@@ -86,6 +112,13 @@ class DefaultController extends Controller
     public function checkDevEnvironment()
     {
         return ( $this->container->get('kernel')->getEnvironment() === 'dev' );
+    }
+
+    public function checkEnviromentAction()
+    {
+        
+        return $this->container->get('templating')->renderResponse('SetupBundle:Setup:check.html.twig', array(
+        ));
     }
 
     public function getVersion()

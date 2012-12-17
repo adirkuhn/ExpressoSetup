@@ -1,7 +1,7 @@
 parameters:
     database_driver: pdo_pgsql
     database_host: localhost
-    database_port: '5432'
+    database_port: '5433'
     database_name: expresso
     database_user: postgres
     database_password: null
@@ -17,5 +17,5 @@ parameters:
     ldap_host: localhost
     ldap_port: null
     ldap_dn: dc=prognus
-    ldap_user: 'cn=admin,dc=prognus'
+    ldap_user: user10
     ldap_pass: prognus

@@ -1,11 +1,15 @@
 ExpressoSetupBundle_homepage:
-    pattern:  /setup
+    pattern:  /{index}
     defaults: { _controller: SetupBundle:Default:setup, index: 0 }
 
 ExpressoSetupBundle_setup:
-    pattern:  /setup/{index}
+    pattern:  /{index}
     defaults: { _controller: SetupBundle:Default:setup, index: 0 }
 
 ExpressoSetupBundle_final:
-    pattern:  /setup/final/
+    pattern:  /final/
     defaults: { _controller: SetupBundle:Default:final }
+
+ExpressoSetupBundle_check:
+    pattern: /check/
+    defaults: {_controller: SetupBundle:Default:checkEnviroment}
