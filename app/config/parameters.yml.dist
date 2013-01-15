@@ -4,11 +4,11 @@ parameters:
     database_port: '5432'
     database_name: expresso
     database_user: postgres
-    database_password: null
+    database_password: password
     mailer_transport: smtp
     mailer_host: localhost
-    mailer_user: null
-    mailer_password: null
+    mailer_user: mailuser
+    mailer_password: mailpass
     setup: 1
     locale: en
     secret: ThisTokenIsNotSoSecretChangeIt
@@ -16,6 +16,6 @@ parameters:
     database_path: null
     ldap_host: localhost
     ldap_port: null
-    ldap_dn: dc=prognus
-    ldap_user: 'cn=admin,dc=prognus'
-    ldap_pass: prognus
+    ldap_dn: dc=customdc
+    ldap_user: 'cn=customcn,dc=customdc'
+    ldap_pass: password
